@@ -13,13 +13,21 @@ Subtitle := "GLRS interface for Linear Programming in GAP",
 Version := "0.1",
 Date := "23/10/2017", # dd/mm/yyyy format
 
+##  Optional: if the package manual uses GAPDoc, you may duplicate the
+##  version and the release date as shown below to read them while building
+##  the manual using GAPDoc facilities to distibute documents across files.
+##  <#GAPDoc Label="PKGVERSIONDATA">
+##  <!ENTITY VERSION "0.10">
+##  <!ENTITY RELEASEDATE "23 October 2017">
+##  <#/GAPDoc>
+
 Persons := [
   rec(
     IsAuthor := true,
     IsMaintainer := true,
-    FirstNames := "Gabor Peter",
+    FirstNames := "Gábor Péter",
     LastName := "Nagy",
-    WWWHome := "www.math.u-szeged.hu/~nagyg",
+    WWWHome := "http://www.math.u-szeged.hu/~nagyg",
     Email := "nagyg@math.u-szeged.hu",
     PostalAddress := "H-6720 Szeged (Hungary), Aradi vertanuk tere 1",
     Place := "Szeged",
@@ -79,5 +87,3 @@ TestFile := "tst/testall.g",
 #Keywords := [ "TODO" ],
 
 ));
-
-

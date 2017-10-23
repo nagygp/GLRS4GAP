@@ -5,12 +5,12 @@ description: |
     GLRS interface for Linear Programming in GAP
 
 authors:
-    - name: Gabor Peter Nagy
-      url: www.math.u-szeged.hu/~nagyg
+    - name: Gábor Péter Nagy
+      url: http://www.math.u-szeged.hu/~nagyg
 
 maintainers:
-    - name: Gabor Peter Nagy
-      url: www.math.u-szeged.hu/~nagyg
+    - name: Gábor Péter Nagy
+      url: http://www.math.u-szeged.hu/~nagyg
 
 GAP: ">= 4.8"
 
