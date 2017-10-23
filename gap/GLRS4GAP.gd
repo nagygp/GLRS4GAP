@@ -4,6 +4,5 @@
 # Declarations
 #
 
-#! @Description
-#!   Insert documentation for you function here
-DeclareGlobalFunction( "GLRS4GAP_Example" );
+DeclareGlobalFunction( "LRS_LP_solve_max" );
+DeclareGlobalFunction( "LRS_LP_solve_min" );
