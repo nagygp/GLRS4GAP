@@ -1,48 +1,35 @@
-name: GitHubPagesForGAP
-version: 0.2
-date: 04/02/2017
+name: GLRS4GAP
+version: 0.1
+date: 23/10/2017
 description: |
-    A GitHub Pages generator for GAP packages
+    GLRS interface for Linear Programming in GAP
 
 authors:
-    - name: Max Horn
-      url: http://www.quendi.de/math
-    - name: A. U. Thor
+    - name: Gabor Peter Nagy
+      url: www.math.u-szeged.hu/~nagyg
 
 maintainers:
-    - name: Max Horn
-      url: http://www.quendi.de/math
-    - name: Jan Itor
+    - name: Gabor Peter Nagy
+      url: www.math.u-szeged.hu/~nagyg
 
-GAP: ">=4.8.1"
+GAP: ">= 4.8"
 
 needed-pkgs:
     - name: "GAPDoc"
-      version: ">= 1.2"
+      version: ">= 1.5"
       url: "http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc"
-    - name: "IO"
-      version: ">= 4.1"
-      url: "https://gap-packages.github.io/io"
 
-suggested-pkgs:
-    - name: "orb"
-      version: ">= 4.2"
-      url: "https://gap-packages.github.io/orb"
-
-www: https://gap-system.github.io/GitHubPagesForGAP/
+www: https://nagygp.github.io/GLRS4GAP/
 readme: README.md
-packageinfo: https://gap-system.github.io/GitHubPagesForGAP/PackageInfo.g
-github: https://github.com/gap-system/GitHubPagesForGAP
+packageinfo: https://nagygp.github.io/GLRS4GAP/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/gap-system/GitHubPagesForGAP/releases/download/v0.2/GitHubPagesForGAP-0.2.tar.gz
-    - name: .tar.bz2
-      url: https://github.com/gap-system/GitHubPagesForGAP/releases/download/v0.2/GitHubPagesForGAP-0.2.tar.bz2
+      url: https://github.com/nagygp/GLRS4GAP/releases/download/v0.1/GLRS4GAP-0.1.tar.gz
 
 abstract: |
-    This is a pseudo package that contains no actual  <span class="pkgname">GAP</span> code. Instead, it is a template for other  GAP packages that allows to quickly setup GitHub Pages.
+    
 
-status: other
+status: dev
 doc-html: doc/chap0.html
 doc-pdf: doc/manual.pdf
