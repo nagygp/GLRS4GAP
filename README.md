@@ -1,3 +1,3 @@
-The GAP 4 package `GLRS4GAP'
+The GAP 4 package `LRS4GAP'
 ==============================
 

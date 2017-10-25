@@ -3,17 +3,17 @@
 <!-- Reading PKGVERSIONDATA chunk from the PackageInfo.g file -->
 
 <!DOCTYPE Book SYSTEM "gapdoc.dtd"
-[ <!ENTITY GLRS4GAP "<Package>GLRS4GAP</Package>">
+[ <!ENTITY LRS4GAP "<Package>LRS4GAP</Package>">
 <#Include Label="PKGVERSIONDATA">
 ]>
 
-<!-- Documentation of the GLRS4GAP package. -->
+<!-- Documentation of the LRS4GAP package. -->
 
-<Book Name="GLRS4GAP">
+<Book Name="LRS4GAP">
 
 <TitlePage>
-<Title>The &GLRS4GAP; Package</Title>
-<Subtitle>GLRS interface for Linear Programming in &GAP;</Subtitle>
+<Title>The &LRS4GAP; Package</Title>
+<Subtitle>LRS interface for Linear Programming in &GAP;</Subtitle>
 <Version>Version &VERSION;</Version>
 <Date>&RELEASEDATE;</Date>
 <Author> Gábor P. Nagy
@@ -24,7 +24,7 @@
 <Copyright>
 <Index>License</Index>
 &copyright; 2017 by Gábor P. Nagy<P/>
-&GLRS4GAP; package is free software;
+&LRS4GAP; package is free software;
 you can redistribute it and/or modify it under the terms of the
 <URL Text="GNU General Public License">http://www.fsf.org/licenses/gpl.html</URL>
 as published by the Free Software Foundation; either version 2 of the License,
@@ -42,32 +42,26 @@ users and developers.
 <Body>
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-<Chapter Label="GLRS4GAP Introduction">
+<Chapter Label="LRS4GAP Introduction">
 <Heading>Introduction</Heading>
 
-<Index>GLRS4GAP package</Index>
-This chapter  describes  the  &GAP;  package  &GLRS4GAP;.  This package implements
-functionalities for divisors and Riemann-Roch spaces of an algebraic function field of
-genus zero.
+<Index>LRS4GAP package</Index>
+This chapter  describes  the  &GAP;  package  &LRS4GAP;.  This package implements a Linear Programming solver for &GAP; using the arbitrary precision rational arithmetic solver <URL Text="lrs">http://www-cgrl.cs.mcgill.ca/~avis/C/lrs.html</URL> by David Avis.
 <P/>
 
 If you are viewing this with on-line help, type:
 <P/>
 <Example><![CDATA[
-gap> ?GLRS4GAP package
+gap> ?LRS4GAP package
 ]]></Example>
 <P/>
-to see the functions provided by the &GLRS4GAP; package.<P/>
+to see the functions provided by the &LRS4GAP; package.<P/>
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-<Section Label="Unpacking the GLRS4GAP Package">
-<Heading>Unpacking the &GLRS4GAP; Package</Heading>
+<Section Label="Unpacking the LRS4GAP Package">
+<Heading>Unpacking the &LRS4GAP; Package</Heading>
 
-If the &GLRS4GAP; package was obtained as a part of the &GAP; distribution
-from the <Q>Download</Q> section of the &GAP; website, you may proceed
-to Section <Ref Sect="Compiling Binaries of the GLRS4GAP Package"/>.
-Alternatively, the &GLRS4GAP; package may be installed using a separate archive,
-for example, for an update or an installation in a non-default location
+The &LRS4GAP; package may be installed in the &GAP; root package directory, or using a separate archive, for example, for an update or an installation in a non-default location
 (see <Ref Sect="GAP Root Directories" BookName="ref"/>).
 <P/>
 
@@ -76,28 +70,22 @@ archive format. Installation using other archive formats is performed in a
 similar way.
 <P/>
 
-To install the &GLRS4GAP; package, unpack the archive file, which  should
-have a name of form <C>GLRS4GAP-<A>XXX</A>.tar.gz</C> for some version number
+To install the &LRS4GAP; package, unpack the archive file, which  should
+have a name of form <C>LRS4GAP-<A>XXX</A>.tar.gz</C> for some version number
 <A>XXX</A>, by typing
 <P/>
-&nbsp;&nbsp;<C>gzip -dc GLRS4GAP-<A>XXX</A>.tar.gz | tar xpv</C>
+&nbsp;&nbsp;<C>gzip -dc LRS4GAP-<A>XXX</A>.tar.gz | tar xpv</C>
 <P/>
 
 It may be unpacked in one of the following locations:
 <List>
-<Item>
-in the <File>pkg</File> directory of your &GAP;&nbsp;4 installation;
-</Item>
-<Item>
-or in a directory named <File>.gap/pkg</File> in your home directory
+<Item>in the <File>pkg</File> directory of your &GAP;&nbsp;4 installation;</Item>
+<Item>or in a directory named <File>.gap/pkg</File> in your home directory
 (to be added to the &GAP; root directory unless &GAP; is started with
-<C>-r</C> option);
-</Item>
-<Item>
-or in a directory named <File>pkg</File> in another directory of your
+<C>-r</C> option);</Item>
+<Item>or in a directory named <File>pkg</File> in another directory of your
 choice (e.g.&nbsp;in the directory <File>mygap</File> in your home
-directory).
-</Item>
+directory).</Item>
 </List>
 
 In the latter case one one must start &GAP; with the <C>-l</C> option,
@@ -114,48 +102,113 @@ directory).
 </Section>
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-<Section Label="Loading the GLRS4GAP Package">
-<Heading>Loading the &GLRS4GAP; Package</Heading>
+<Section Label="Loading the LRS4GAP Package">
+<Heading>Loading the &LRS4GAP; Package</Heading>
 
-To use the &GLRS4GAP; Package you have to request it explicitly. This  is
-done by calling <Ref Func="LoadPackage" BookName="ref"/>:
+To use the &LRS4GAP; Package you have to request it explicitly. This  is done by calling <Ref Func="LoadPackage" BookName="ref"/>:
 <P/>
 <Example><![CDATA[
-gap> LoadPackage("GLRS4GAP");
+gap> LoadPackage("LRS4GAP");
 ----------------------------------------------------------------
-Loading  GLRS4GAP 0.1
+Loading  LRS4GAP 0.1
 by Gábor P. Nagy (http://www.math.u-szeged.hu/~nagyg)
-For help, type: ?GLRS4GAP package
+For help, type: ?LRS4GAP package
 ----------------------------------------------------------------
 true
 ]]></Example>
 <P/>
 
-If &GAP; cannot find a working binary, the call  to  <C>LoadPackage</C>  will
-still succeed but a warning is issued informing that  the  <C>HelloWorld()</C>
-function will be unavailable.
+If &GAP; cannot find a working binary then it does not load the package and returns <C>fail</C>.
 <P/>
-If you want to load the &GLRS4GAP; package by default, you  can  put  the
-<C>LoadPackage</C> command  into  your  <F>gaprc</F>  file
-(see  Section&nbsp;<Ref Sect="The gap.ini and gaprc files" BookName="ref"/>).
+If you want to load the &LRS4GAP; package by default, you  can  put  the <C>LoadPackage</C> command  into  your  <F>gaprc</F>  file (see  Section&nbsp;<Ref Sect="The gap.ini and gaprc files" BookName="ref"/>).
+</Section>
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+<Section Label="Compiling Binaries of the LRS4GAP Package">
+<Heading>Compiling Binaries of the &LRS4GAP; Package</Heading>
+
+After unpacking the archive, go to the newly created <F>LRS4GAP/src</F>  directory and call
+<P/>
+<Log><![CDATA[
+make clean
+make lrs
+]]></Log>
+<P/>
+This will compile the binary <C>lrs</C>, which you have to copy in the appropriate directory of <C>bin</C>.
+
 
 </Section>
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-<Section Label="Loading the GLRS4GAP Package">
-<Heading>Testing the &GLRS4GAP; Package</Heading>
+<Section Label="Testing the LRS4GAP Package">
+<Heading>Testing the &LRS4GAP; Package</Heading>
 
 You can run tests for the package by
-
 <Example><![CDATA[
-gap> Test(Filename(DirectoriesPackageLibrary("GLRS4GAP"),"../tst/testall.tst"));
+gap> Test(Filename(DirectoriesPackageLibrary("LRS4GAP"),"../tst/testall.tst"));
 ]]></Example>
 
 </Section>
 </Chapter>
 
-<Chapter Label="GLRS4GAP Usage">
+<Chapter Label="LRS4GAP Usage">
 <Heading>Usage</Heading>
+
+<Section Label="LP problems">
+<Heading>Formulating the Linear Programming problems</Heading>
+Let <M>A</M> be a rational matrix with <M>n</M> rows and <M>m</M> columns, <M>rhs</M> a (column) vector of dimension <M>n</M> and <M>obj</M> is a (row) vector of dimension <M>m</M>.
+<P/>
+
+We consider the Linear Programming problem <P/>
+
+<E>maximize/minimize</E> <M>obj\cdot{x}</M>, <E>subject to</E> <M>Ax \geq rhs</M>.<P/>
+</Section>
+
+<Section Label="LRS4GAP functions">
+<Heading>&LRS4GAP; functions</Heading>
+
+<ManSection>
+<Func Name="LRS_LPSolveMax" Arg='A,rhs,obj'/>
+<Func Name="LRS_LPSolveMin" Arg='A,rhs,obj'/>
+<Description>
+  If the problem has a solution then the function returns the pair <C>[ x, val ]</C>, where <M>x</M> is the vector of dimension <M>m</M> which realizes the optimum value <M>val</M>. If the problem is not feasible or not bounded then the function returns <C>[ fail, "No feasible solution" ]</C> or <C>[ fail, "Unbounded solution" ]</C> and the respective info warning will be given.
+</Description>
+</ManSection>
+
+<ManSection>
+<Func Name="LRS_Export2FreeMPS" Arg='A,rhs,obj,filename'/>
+<Description>
+  This function exports the LP problem to the free <URL Text="MPS format">https://en.wikipedia.org/wiki/MPS_(format)</URL>. This format is used by several more sophisticated LP solvers, for example the <URL Text="GNU Linear Programming Kit">http://www.gnu.org/software/glpk/</URL> <F>GLPK</F>. See the documentation <URL Text="glpk-refman.pdf">https://www.math.ucdavis.edu/~mkoeppe/lehre/opt1-2003/glpk-refman.pdf</URL> for detailed description of this format. Moreover, <F>GLPK</F> can be used to convert to problem data in several other formats.
+</Description>
+</ManSection>
+</Section>
+
+<Section Label="LRS4GAP example">
+<Heading>Example</Heading>
+
+<Example>
+gap&gt; A := [ [ 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 2 ], [ -1, -1, 0, -1, -2, -1, -1, -1, 0, -1, -1, 0 ],
+&gt; 	[ 5, 0, 0, 3, -1, -1, 1, 1, 1, -3, 0, -2 ], [ 5, 0, 0, 3, -1, -1, 1, 1, 1, -3, 0, -2 ],
+&gt; 	[ -9, 1, -1, 0, 0, 0, 3, 0, 0, -1, -1, 2 ], [ -9, 1, -1, 0, 0, 0, 3, 0, 0, -1, -1, 2 ],
+&gt; 	[ 12, 2, -2, 0, 0, 0, 0, 0, 0, 4, 1, -2 ], [ -11, -1, 0, 1, 2, 1, 1, 1, -2, -3, 0, 0 ],
+&gt; 	[ 3, -2, 2, 0, 0, 0, 3, 0, 0, 3, 0, 0 ], [ 10, 0, 0, -7, 0, 1, -2, 1, 0, 2, -1, -1 ],
+&gt; 	[ 10, 0, 0, -7, 0, 1, -2, 1, 0, 2, -1, -1 ], [ -10, 0, 0, 3, -1, -1, -2, 1, -1, 6, 0, 2 ],
+&gt; 	[ -10, 0, 0, 3, -1, -1, -2, 1, -1, 6, 0, 2 ], [ 35, 0, 0, 6, -2, 2, 3, 0, -2, 3, 0, 0 ],
+&gt; 	[ -5, 0, 0, -3, 1, 1, -1, -1, 0, 3, 0, 0 ], [ -5, 0, 0, -3, 1, 1, -1, -1, 0, 3, 0, 0 ],
+&gt; 	[ -15, 0, 0, 8, 2, 0, -3, 0, 0, -7, -1, 0 ], [ 11, 1, 2, 7, 0, -1, -1, -1, 0, 3, 0, 0 ],
+&gt; 	[ 24, -1, -2, 8, 2, 0, 0, 0, 2, 8, -1, 0 ], [ -19, 1, 0, 6, -2, 2, -3, 0, 0, -3, 0, 0 ],
+&gt; 	[ 16, 1, 0, -6, 2, -2, 0, 0, -2, 0, 0, 0 ], [ 0, 0, 0, -8, -2, 0, 0, 0, 2, 0, 0, 2 ],
+&gt; 	[ 9, -1, 0, 0, 0, 0, -3, 0, 0, 1, 1, 0 ], [ 24, -1, -2, 0, 0, 0, 0, 0, 0, -8, 1, 2 ],
+&gt; 	[ 36, 1, 2, 0, 0, 0, 0, 0, 0, -4, -1, 0 ], [ -45, 0, 0, 0, 0, 0, 3, 0, 0, 3, 0, -2 ] ];;
+gap&gt; rhs := [ -1, -23, -45, -45, -231, -231, -252, -253, -483, -770, -770, -990, -990, -1035, -1035,
+&gt;   -1035, -1265, -1771, -2024, -2277, -3312, -3520, -5313, -5544, -5796, -10395 ];;
+gap&gt; obj := [ 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 2 ];;
+gap&gt; LRS_LPSolveMax(A,rhs,obj);
+[ [ 4163/16, -2967/4, -2967/4, 37007/112, 20217/14, 24403/16, -14053/16, 15847/4, 9177/4, 3657/8, -31119/4, -2577/2 ], 551 ]
+</Example>
+
+</Section>
+
 </Chapter>
 
 </Body>

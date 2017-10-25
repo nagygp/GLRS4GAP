@@ -1,5 +1,5 @@
 #
-# GLRS4GAP: GLRS interface for Linear Programming in GAP
+# LRS4GAP: LRS interface for Linear Programming in GAP
 #
 # This file contains package meta data. For additional information on
 # the meaning and correct usage of these fields, please consult the
@@ -8,8 +8,8 @@
 #
 SetPackageInfo( rec(
 
-PackageName := "GLRS4GAP",
-Subtitle := "GLRS interface for Linear Programming in GAP",
+PackageName := "LRS4GAP",
+Subtitle := "LRS interface for Linear Programming in GAP",
 Version := "0.1",
 Date := "23/10/2017", # dd/mm/yyyy format
 
@@ -41,7 +41,7 @@ SourceRepository := rec(
 ),
 IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
 #SupportEmail   := "TODO",
-PackageWWWHome  := "https://nagygp.github.io/GLRS4GAP/",
+PackageWWWHome  := "https://nagygp.github.io/LRS4GAP/",
 PackageInfoURL  := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 README_URL      := Concatenation( ~.PackageWWWHome, "README.md" ),
 ArchiveURL      := Concatenation( ~.SourceRepository.URL,
@@ -63,12 +63,12 @@ Status := "dev",
 AbstractHTML   :=  "",
 
 PackageDoc := rec(
-  BookName  := "GLRS4GAP",
+  BookName  := "LRS4GAP",
   ArchiveURLSubset := ["doc"],
   HTMLStart := "doc/chap0.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "GLRS interface for Linear Programming in GAP",
+  LongTitle := "LRS interface for Linear Programming in GAP",
 ),
 
 Dependencies := rec(
@@ -78,9 +78,10 @@ Dependencies := rec(
   ExternalConditions := [ ],
 ),
 
+#AvailabilityTest := ReturnTrue,
 AvailabilityTest := function()
-        return true;
-    end,
+  return Filename( DirectoriesPackagePrograms( "LRS4GAP" ), "lrs" )<>fail;
+end,
 
 TestFile := "tst/testall.g",
 
