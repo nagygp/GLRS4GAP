@@ -3,8 +3,8 @@
 ##
 LoadPackage( "GAPDoc" );
 
-doc_path := "/home/nagyg/MyGAP/pkg/LRS4GAP/doc";
-xml_path := "/home/nagyg/MyGAP/pkg/LRS4GAP/doc";
+doc_path := "doc";
+xml_path := "doc";
 
 opts:=GAPDoc2LaTeXProcs.DefaultOptions;
 Append(opts.FontPackages,"\\usepackage{amsmath}\n");
