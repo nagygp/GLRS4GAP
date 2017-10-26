@@ -1,0 +1,12 @@
+  
+  
+  [1XIndex[101X
+  
+  License  .-1
+  LRS4GAP package  1.
+  [2XLRS_Export2FreeMPS[102X  2.2-2
+  [2XLRS_LPSolveMax[102X  2.2-1
+  [2XLRS_LPSolveMin[102X  2.2-1
+  
+  
+  -------------------------------------------------------
