@@ -30,7 +30,7 @@ CopyHTMLStyleFiles( doc_path );
 
 # Create the manual.lab file which is needed if the main manuals or another
 # package is referring to your package
-GAPDocManualLab( "LRS4GAP" );;
+#GAPDocManualLab( "LRS4GAP" );;
 
 # Create VERSION file for packaging
 #PrintTo( "VERSION", GAPInfo.PackagesInfo.LRS4GAP[1].Version );
