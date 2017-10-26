@@ -10,15 +10,15 @@ SetPackageInfo( rec(
 
 PackageName := "LRS4GAP",
 Subtitle := "LRS interface for Linear Programming in GAP",
-Version := "0.1",
-Date := "23/10/2017", # dd/mm/yyyy format
+Version := "0.20",
+Date := "26/10/2017", # dd/mm/yyyy format
 
 ##  Optional: if the package manual uses GAPDoc, you may duplicate the
 ##  version and the release date as shown below to read them while building
 ##  the manual using GAPDoc facilities to distibute documents across files.
 ##  <#GAPDoc Label="PKGVERSIONDATA">
-##  <!ENTITY VERSION "0.10">
-##  <!ENTITY RELEASEDATE "23 October 2017">
+##  <!ENTITY VERSION "0.20">
+##  <!ENTITY RELEASEDATE "26 October 2017">
 ##  <#/GAPDoc>
 
 Persons := [
