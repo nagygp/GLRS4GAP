@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <script type="text/javascript"
-  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 <title>GAP (LRS4GAP) - Chapter 2: Usage</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -28,13 +28,14 @@
 <div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7E2CD6C2810CB7CF">2.1 <span class="Heading">Formulating the Linear Programming problems</span></a>
 </span>
 </div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7F212E597BDC1F45">2.2 <span class="Heading"><strong class="pkg">LRS4GAP</strong> functions</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X817A65AA857D6EDD">2.2 <span class="Heading"><strong class="pkg">LRS4GAP</strong> functions</span></a>
 </span>
 <div class="ContSSBlock">
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X856CC333852BE5B2">2.2-1 LRS_LPSolveMax</a></span>
 <span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X85FBC8C1877A3D2C">2.2-2 LRS_Export2FreeMPS</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7FA9CD5986860C6D">2.2-3 LRS_MaxWeightMatching</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X85861B017AEEC50B">2.3 <span class="Heading">Example</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7A489A5D79DA9E5C">2.3 <span class="Heading">Examples</span></a>
 </span>
 </div>
 </div>
@@ -51,7 +52,7 @@
 
 <p><em>maximize/minimize</em> <span class="SimpleMath">\(obj\cdot{x}\)</span>, <em>subject to</em> <span class="SimpleMath">\(Ax \geq rhs\)</span>.</p>
 
-<p><a id="X7F212E597BDC1F45" name="X7F212E597BDC1F45"></a></p>
+<p><a id="X817A65AA857D6EDD" name="X817A65AA857D6EDD"></a></p>
 
 <h4>2.2 <span class="Heading"><strong class="pkg">LRS4GAP</strong> functions</span></h4>
 
@@ -70,9 +71,17 @@
 <div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LRS_Export2FreeMPS</code>( <var class="Arg">A</var>, <var class="Arg">rhs</var>, <var class="Arg">obj</var>, <var class="Arg">filename</var> )</td><td class="tdright">( function )</td></tr></table></div>
 <p>This function exports the LP problem to the free <span class="URL"><a href="https://en.wikipedia.org/wiki/MPS_(format)">MPS format</a></span>. This format is used by several more sophisticated LP solvers, for example the <span class="URL"><a href="http://www.gnu.org/software/glpk/">GNU Linear Programming Kit</a></span> <code class="file">GLPK</code>. See the documentation <span class="URL"><a href="https://www.math.ucdavis.edu/~mkoeppe/lehre/opt1-2003/glpk-refman.pdf">glpk-refman.pdf</a></span> for detailed description of this format. Moreover, <code class="file">GLPK</code> can be used to convert to problem data in several other formats.</p>
 
-<p><a id="X85861B017AEEC50B" name="X85861B017AEEC50B"></a></p>
+<p><a id="X7FA9CD5986860C6D" name="X7FA9CD5986860C6D"></a></p>
 
-<h4>2.3 <span class="Heading">Example</span></h4>
+<h5>2.2-3 LRS_MaxWeightMatching</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LRS_MaxWeightMatching</code>( <var class="Arg">m</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; LRS_MinWeightMatching</code>( <var class="Arg">m</var> )</td><td class="tdright">( function )</td></tr></table></div>
+<p>Let <var class="Arg">m</var> be a square matrix over the rationals. These commands return the solution of the assigment problem of maximizing/minimizing the objective function <span class="SimpleMath">\(\sum_{i,j} X_{i,j} m_{i,j}\)</span> with <span class="SimpleMath">\(0\leq X_{i,j}\leq 1\)</span>.</p>
+
+<p><a id="X7A489A5D79DA9E5C" name="X7A489A5D79DA9E5C"></a></p>
+
+<h4>2.3 <span class="Heading">Examples</span></h4>
 
 
 <div class="example"><pre>
@@ -94,6 +103,14 @@
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">obj := [ 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 2 ];;</span>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LRS_LPSolveMax(A,rhs,obj);</span>
 [ [ 4163/16, -2967/4, -2967/4, 37007/112, 20217/14, 24403/16, -14053/16, 15847/4, 9177/4, 3657/8, -31119/4, -2577/2 ], 551 ]
+</pre></div>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ma:=RandomMat(5,5);  </span>
+[ [ 0, 2, 1, 0, -1 ], [ 2, -1, 2, 3, 4 ], [ -1, 0, -4, 2, 2 ], [ 0, 3, 2, 3, -4 ], [ 5, 0, 0, 1, -1 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">LRS_MinWeightMatching(ma);</span>
+[ [ [ 1, 0, 0, 0, 0 ], [ 0, 1, 0, 0, 0 ], [ 0, 0, 1, 0, 0 ], [ 0, 0, 0, 0, 1 ], [ 0, 0, 0, 1, 0 ] ], -8 ]
 </pre></div>
 
 

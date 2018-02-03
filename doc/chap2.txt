@@ -38,8 +38,17 @@
   detailed  description  of this format. Moreover, [11XGLPK[111X can be used to convert
   to problem data in several other formats.[133X
   
+  [1X2.2-3 LRS_MaxWeightMatching[101X
   
-  [1X2.3 [33X[0;0YExample[133X[101X
+  [29X[2XLRS_MaxWeightMatching[102X( [3Xm[103X ) [32X function
+  [29X[2XLRS_MinWeightMatching[102X( [3Xm[103X ) [32X function
+  
+  [33X[0;0YLet  [3Xm[103X  be  a  square  matrix  over the rationals. These commands return the
+  solution  of  the  assigment  problem of maximizing/minimizing the objective
+  function [22X∑_i,j X_i,j m_i,j[122X with [22X0≤ X_i,j≤ 1[122X.[133X
+  
+  
+  [1X2.3 [33X[0;0YExamples[133X[101X
   
   [4X[32X  Example  [32X[104X
     [4X[25Xgap>[125X [27XA := [ [ 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 2 ], [ -1, -1, 0, -1, -2, -1, -1, -1, 0, -1, -1, 0 ],[127X[104X
@@ -60,5 +69,12 @@
     [4X[25Xgap>[125X [27Xobj := [ 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 2 ];;[127X[104X
     [4X[25Xgap>[125X [27XLRS_LPSolveMax(A,rhs,obj);[127X[104X
     [4X[28X[ [ 4163/16, -2967/4, -2967/4, 37007/112, 20217/14, 24403/16, -14053/16, 15847/4, 9177/4, 3657/8, -31119/4, -2577/2 ], 551 ][128X[104X
+  [4X[32X[104X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xma:=RandomMat(5,5);  [127X[104X
+    [4X[28X[ [ 0, 2, 1, 0, -1 ], [ 2, -1, 2, 3, 4 ], [ -1, 0, -4, 2, 2 ], [ 0, 3, 2, 3, -4 ], [ 5, 0, 0, 1, -1 ] ][128X[104X
+    [4X[25Xgap>[125X [27XLRS_MinWeightMatching(ma);[127X[104X
+    [4X[28X[ [ [ 1, 0, 0, 0, 0 ], [ 0, 1, 0, 0, 0 ], [ 0, 0, 1, 0, 0 ], [ 0, 0, 0, 0, 1 ], [ 0, 0, 0, 1, 0 ] ], -8 ][128X[104X
   [4X[32X[104X
   

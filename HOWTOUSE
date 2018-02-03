@@ -1,0 +1,27 @@
+# 1: Go into your clone of your package repository.
+
+# 2: Setup a gh-pages branch in a gh-pages subdirectory.
+
+# Add a new remote pointing to the GitHubPagesForGAP repository
+git remote add gh-gap https://github.com/gap-system/GitHubPagesForGAP
+git fetch gh-gap
+
+# Create a fresh gh-pages branch from the new remote
+git branch gh-pages gh-gap/gh-pages --no-track
+
+# Create a new worktree and change into it
+git worktree add gh-pages gh-pages
+cd gh-pages
+
+# 3: Add in copies of your PackageInfo.g, README and manual:
+
+cp -f ../PackageInfo.g ../README.md .
+cp -f ../doc/*.{css,html,js,txt} doc/
+gap update.g
+
+# 4: Commit and push everything.
+
+git add PackageInfo.g README.md doc/ _data/package.yml
+git commit -m "Setup gh-pages based on GitHubPagesForGAP"
+git push --set-upstream origin gh-pages
+

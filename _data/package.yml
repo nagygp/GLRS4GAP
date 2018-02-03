@@ -1,5 +1,5 @@
 name: LRS4GAP
-version: 0.21
+version: 0.22
 date: 26/10/2017
 description: |
     LRS interface for Linear Programming in GAP
@@ -25,7 +25,7 @@ packageinfo: https://nagygp.github.io/LRS4GAP/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/nagygp/LRS4GAP/releases/download/v0.21/LRS4GAP-0.21.tar.gz
+      url: https://github.com/nagygp/LRS4GAP/releases/download/v0.22/LRS4GAP-0.22.tar.gz
 
 abstract: |
     

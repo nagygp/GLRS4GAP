@@ -6,7 +6,7 @@
                   [1XLRS interface for Linear Programming in [5XGAP[105X[101X
   
   
-                                  Version 0.21
+                                  Version 0.22
   
   
                                 26 October 2017
@@ -56,7 +56,8 @@
     2.2 [33X[0;0Y[5XLRS4GAP[105X functions[133X
       2.2-1 LRS_LPSolveMax
       2.2-2 LRS_Export2FreeMPS
-    2.3 [33X[0;0YExample[133X
+      2.2-3 LRS_MaxWeightMatching
+    2.3 [33X[0;0YExamples[133X
   
   
   [32X
