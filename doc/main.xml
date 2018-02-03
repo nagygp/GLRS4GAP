@@ -151,9 +151,11 @@ gap> Test(Filename(DirectoriesPackageLibrary("LRS4GAP"),"../tst/testall.tst"));
 </Section>
 </Chapter>
 
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <Chapter Label="LRS4GAP Usage">
 <Heading>Usage</Heading>
 
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 <Section Label="LP problems">
 <Heading>Formulating the Linear Programming problems</Heading>
 Let <M>A</M> be a rational matrix with <M>n</M> rows and <M>m</M> columns, <M>rhs</M> a (column) vector of dimension <M>n</M> and <M>obj</M> is a (row) vector of dimension <M>m</M>.
@@ -171,20 +173,37 @@ We consider the Linear Programming problem <P/>
 <Func Name="LRS_LPSolveMax" Arg='A,rhs,obj'/>
 <Func Name="LRS_LPSolveMin" Arg='A,rhs,obj'/>
 <Description>
-  If the problem has a solution then the function returns the pair <C>[ x, val ]</C>, where <M>x</M> is the vector of dimension <M>m</M> which realizes the optimum value <M>val</M>. If the problem is not feasible or not bounded then the function returns <C>[ fail, "No feasible solution" ]</C> or <C>[ fail, "Unbounded solution" ]</C> and the respective info warning will be given.
+  If the problem has a solution then the function returns the pair <C>[ x, val ]</C>, where <M>x</M> is the vector of 
+  dimension <M>m</M> which realizes the optimum value <M>val</M>. If the problem is not feasible or not bounded then the 
+  function returns <C>[ fail, "No feasible solution" ]</C> or <C>[ fail, "Unbounded solution" ]</C> and the respective 
+  info warning will be given.
 </Description>
 </ManSection>
 
 <ManSection>
 <Func Name="LRS_Export2FreeMPS" Arg='A,rhs,obj,filename'/>
 <Description>
-  This function exports the LP problem to the free <URL Text="MPS format">https://en.wikipedia.org/wiki/MPS_(format)</URL>. This format is used by several more sophisticated LP solvers, for example the <URL Text="GNU Linear Programming Kit">http://www.gnu.org/software/glpk/</URL> <F>GLPK</F>. See the documentation <URL Text="glpk-refman.pdf">https://www.math.ucdavis.edu/~mkoeppe/lehre/opt1-2003/glpk-refman.pdf</URL> for detailed description of this format. Moreover, <F>GLPK</F> can be used to convert to problem data in several other formats.
+  This function exports the LP problem to the free <URL Text="MPS format">https://en.wikipedia.org/wiki/MPS_(format)</URL>. 
+  This format is used by several more sophisticated LP solvers, for example the 
+  <URL Text="GNU Linear Programming Kit">http://www.gnu.org/software/glpk/</URL> <F>GLPK</F>. 
+  See the documentation <URL Text="glpk-refman.pdf">https://www.math.ucdavis.edu/~mkoeppe/lehre/opt1-2003/glpk-refman.pdf</URL> 
+  for detailed description of this format. Moreover, <F>GLPK</F> can be used to convert to problem data in several other formats.
 </Description>
 </ManSection>
+
+<ManSection>
+<Func Name="LRS_MaxWeightMatching" Arg='m'/>
+<Func Name="LRS_MinWeightMatching" Arg='m'/>
+<Description>
+  Let <A>m</A> be a square matrix over the rationals. These commands return the solution of the assigment problem of maximizing/minimizing 
+  the objective function <M>\sum_{i,j} X_{i,j} m_{i,j}</M> with <M>0\leq X_{i,j}\leq 1</M>.
+</Description>
+</ManSection>
+
 </Section>
 
-<Section Label="LRS4GAP example">
-<Heading>Example</Heading>
+<Section Label="LRS4GAP examples">
+<Heading>Examples</Heading>
 
 <Example>
 gap&gt; A := [ [ 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 2 ], [ -1, -1, 0, -1, -2, -1, -1, -1, 0, -1, -1, 0 ],
@@ -205,6 +224,13 @@ gap&gt; rhs := [ -1, -23, -45, -45, -231, -231, -252, -253, -483, -770, -770, -9
 gap&gt; obj := [ 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 2 ];;
 gap&gt; LRS_LPSolveMax(A,rhs,obj);
 [ [ 4163/16, -2967/4, -2967/4, 37007/112, 20217/14, 24403/16, -14053/16, 15847/4, 9177/4, 3657/8, -31119/4, -2577/2 ], 551 ]
+</Example>
+
+<Example>
+gap&gt; ma:=RandomMat(5,5);  
+[ [ 0, 2, 1, 0, -1 ], [ 2, -1, 2, 3, 4 ], [ -1, 0, -4, 2, 2 ], [ 0, 3, 2, 3, -4 ], [ 5, 0, 0, 1, -1 ] ]
+gap&gt; LRS_MinWeightMatching(ma);
+[ [ [ 1, 0, 0, 0, 0 ], [ 0, 1, 0, 0, 0 ], [ 0, 0, 1, 0, 0 ], [ 0, 0, 0, 0, 1 ], [ 0, 0, 0, 1, 0 ] ], -8 ]
 </Example>
 
 </Section>

@@ -5,3 +5,4 @@
 #
 
 ReadPackage( "LRS4GAP", "gap/LRS4GAP.gd");
+ReadPackage( "LRS4GAP", "gap/matching.gd");
