@@ -47,7 +47,19 @@ InstallGlobalFunction( GLPK_LPSolveNC, function( A, rhs, obj )
 end );
 
 InstallGlobalFunction( GLPK_LPSolveMax, function( A, rhs, obj )
+	if LRS_Inputcheck( A, rhs, obj ) then
+		return GLPK_LPSolveNC( A, rhs, obj );
+	else
+		Error( "wrong input" );
+	fi;
 end );
 
 InstallGlobalFunction( GLPK_LPSolveMin, function( A, rhs, obj )
+    local ret;
+	if LRS_Inputcheck( A, rhs, obj ) then
+		ret := GLPK_LPSolveNC( A, rhs, obj );
+		return [ ret[1], -ret[2] ];
+	else
+		Error( "wrong input" );
+	fi;
 end );
