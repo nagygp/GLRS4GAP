@@ -6,6 +6,6 @@
 ##  DECLARATIONS
 ##  
 
+DeclareGlobalFunction( "GLPK_LPSolveNC" );
 DeclareGlobalFunction( "GLPK_LPSolveMax" );
 DeclareGlobalFunction( "GLPK_LPSolveMin" );
-DeclareGlobalFunction( "GLPK_LPSolveNC" );

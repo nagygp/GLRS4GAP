@@ -6,3 +6,4 @@
 
 ReadPackage( "LRS4GAP", "gap/LRS4GAP.gi");
 ReadPackage( "LRS4GAP", "gap/matching.gi");
+ReadPackage( "LRS4GAP", "gap/glpk4gap.gi");
