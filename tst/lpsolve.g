@@ -1,4 +1,4 @@
-Read("/home/nagyg/Maths/2007/gap/lp4gap.g");
+##  Read("/home/nagyg/Maths/2007/gap/lp4gap.g");
 
 theta_lpdata:=function(tbl,pchar,transitivity)
         local allowednrfixedpoints,nrcc,nonedge_pos,clorb,A,obj,rhs,x,row,i,deg;
@@ -35,8 +35,7 @@ obj:=lpdata[3];
 LoadPackage("LRS4GAP");
 LRS_LPSolveMax(A,rhs,obj);
 
-
-############################
+###############################################################################
 
 LoadPackage("LRS4GAP");
 A := [ [ 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 2 ], [ -1, -1, 0, -1, -2, -1, -1, -1, 0, -1, -1, 0 ],
@@ -56,8 +55,9 @@ rhs := [ -1, -23, -45, -45, -231, -231, -252, -253, -483, -770, -770, -990, -990
   -1035, -1265, -1771, -2024, -2277, -3312, -3520, -5313, -5544, -5796, -10395 ];;
 obj := [ 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 2 ];;
 LRS_LPSolveMax(A,rhs,obj);
+GLPK_LPSolveMax(A,rhs,obj);
 
-############################
+###############################################################################
 
 LogTo("/tmp/lpsolve.log");
 START_TEST("LRS4GAP package: lpsolve.tst");
@@ -80,9 +80,6 @@ rhs := [ -1, -23, -45, -45, -231, -231, -252, -253, -483, -770, -770, -990, -990
   -1035, -1265, -1771, -2024, -2277, -3312, -3520, -5313, -5544, -5796, -10395 ];;
 obj := [ 1, 1, 2, 1, 2, 1, 1, 1, 2, 1, 1, 2 ];;
 LRS_LPSolveMax(A,rhs,obj);
+GLPK_LPSolveMax(A,rhs,obj);
 STOP_TEST( "lpsolve.tst", 10000 );
 LogTo();
-
-############################
-
-Test("/home/nagyg/MyGAP/pkg/LRS4GAP/tst/lpsolve.tst");
