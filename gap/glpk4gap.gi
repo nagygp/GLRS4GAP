@@ -31,10 +31,19 @@ InstallGlobalFunction( GLPK_LPSolveNC, function( A, rhs, obj )
     Exec( Concatenation( "rm ", solv_file ) );
 ##  Interpreting and returning the solution
     rows := SplitString( ret, "\n" );
-    if SplitString( rows[5], " " )[3] = "INFEASIBLE" then
+    solutionline := First( rows, row -> StartsWith( row, "s" ) );
+    primalst := SplitString( solutionline, " " )[5];
+    dualst := SplitString( solutionline, " " )[6];
+    if primalst = "u" then
+        Info( InfoWarning, 1, "Undefined solution" );
+		return [ fail, "Undefined solution" ];
+    elif primalst = "i" then
+        Info( InfoWarning, 1, "Infeasible solution" );
+		return [ fail, "Infeasible solution" ];
+    elif primalst = "n" then
         Info( InfoWarning, 1, "No feasible solution" );
 		return [ fail, "No feasible solution" ];
-    elif SplitString( rows[5], " " )[3] = "UNBOUNDED" then
+    elif primalst = "f" and dualst <> "f" then
 		Info( InfoWarning, 1, "Unbounded solution" );
 		return [ fail, "Unbounded solution" ];
     else
