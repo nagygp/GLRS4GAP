@@ -40,7 +40,7 @@ InstallGlobalFunction( GLPK_LPSolveNC, function( A, rhs, obj )
     else
         sol := Rat( SplitString( First( rows, x -> StartsWith( x, "s" ) ),
                                  " ")[7] );
-        var := List( Filtered( rows, x -> StartsWith( x, "j" ) ),
+        var := List( Filtered( rows, row -> StartsWith( row, "j" ) ),
                      x -> Rat( SplitString( x, " ")[4] ) );
         return [ var, sol ];
     fi;
