@@ -1,0 +1,1 @@
+LoadPackage( "LRS4GAP" );
