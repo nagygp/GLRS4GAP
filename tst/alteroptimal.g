@@ -22,7 +22,7 @@ A := [ [ -1/40, -1/60 ],    # paint shop
        [  0,  1 ] ];        # sign
 
 rhs := [ -1, -1, 0, 0 ];
-obj := [ 3, 2 ];            # 200 ($20.000)
+obj := [ 3, 2 ];            # 120 ($12.000)
 
 sol_lrs := LRS_LPSolveMax( A, rhs, obj );
 sol_glpk := GLPK_LPSolveMax( A, rhs, obj );
