@@ -66,7 +66,7 @@ end );
 InstallGlobalFunction( GLPK_LPSolveMin, function( A, rhs, obj )
     local ret;
 	if LRS_Inputcheck( A, rhs, obj ) then
-		ret := GLPK_LPSolveNC( A, rhs, obj );
+		ret := GLPK_LPSolveNC( A, rhs, -obj );
 		return [ ret[1], -ret[2] ];
 	else
 		Error( "wrong input" );
