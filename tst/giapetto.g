@@ -3,7 +3,7 @@ LoadPackage( "LRS4GAP" );
 ##  Wayne L. Winston: *Operations Research: Applications and Algorithms*. Duxbury
 ##  Press, 2003.
 ##  
-##  Section 3.1, Example 1
+##  Section 3.1, Example 1 *Giapetto’s Woodcarving*
 ##  
 ##  Giapetto’s Woodcarving, Inc., manufactures two types of wooden toys: soldiers
 ##  and trains.  A soldier sells for $27 and uses $10 worth of raw materials. Each
