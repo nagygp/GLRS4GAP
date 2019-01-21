@@ -73,7 +73,6 @@ InstallGlobalFunction( GLPK_LPSolveMin, function( A, rhs, obj )
 	fi;
 end );
 
-##  !CAVEAT!: Non checking
 InstallGlobalFunction( GLPK_Export2FreeMPS, function(A,rhs,obj,filename)
     local nrows, ncols, n_nonzeros, out, i, j;
 	if not LRS_Inputcheck(A,rhs,obj) then
@@ -82,7 +81,10 @@ InstallGlobalFunction( GLPK_Export2FreeMPS, function(A,rhs,obj,filename)
 	nrows:=Size(A);
 	ncols:=Size(A[1]);
 	n_nonzeros:=Number(Flat(A),x->x<>0);
+##  Convert all numbers to floats
     A := Float( A );
+    rhs := Float( rhs );
+    obj := Float( obj );
 	# HEADER
 	out:=OutputTextFile(filename,false);
 	SetPrintFormattingStatus(out,false);
