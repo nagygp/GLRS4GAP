@@ -12,7 +12,8 @@ InstallGlobalFunction( GLPK_LPSolveNC, function( A, rhs, obj )
 ##  The implementation doesn't ship the glpk library and the glpsol command.
 ##  You need this installed on your computer. The implementation requires glpk
 ##  (at least) version 4.65 installed.
-    local tmpdir, prob_file, solv_file, solfile, ret, rows, sol, var;
+    local tmpdir, prob_file, solv_file, solfile, ret, rows, solutionline,
+          primalst, dualst, sol, var;
 ##  Setting up the temporary directory and the files
     tmpdir := DirectoryTemporary();
     prob_file := Filename( tmpdir, "gaplp.mps" );
