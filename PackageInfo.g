@@ -25,7 +25,7 @@ Persons := [
   rec(
     IsAuthor := true,
     IsMaintainer := true,
-    FirstNames := "Gábor Péter",
+    FirstNames := "Gábor P.",
     LastName := "Nagy",
     WWWHome := "http://www.math.u-szeged.hu/~nagyg",
     Email := "nagyg@math.u-szeged.hu",
